@@ -1,11 +1,12 @@
 <template>
   <div class="test-image-component">
     <h1>This is a test image</h1>
-    <img src="@/assets/testimage.webp" alt="Test Image" />
+    <img :src="testImage" alt="Test Image" />
   </div>
 </template>
 
 <script setup lang="ts">
+import testImage from '@/assets/testimage.webp'
 </script>
 
 <style scoped>
@@ -25,4 +26,3 @@ img {
   border-radius: 8px;
 }
 </style>
-

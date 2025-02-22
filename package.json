@@ -1,14 +1,25 @@
 {
-  "name": "test-image-component",
-  "version": "0.0.0",
-  "private": true,
+  "name": "@ce335805/test-image-component",
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
+  "files": ["dist", "src/index.ts", "src/components/TestImageComponent.vue"],
+  "main": "dist/test-image-component.umd.js",
+  "module": "dist/test-image-component.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/test-image-component.es.js",
+      "require": "./dist/test-image-component.umd.js"
+    }
+  },
   "scripts": {
-    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
-    "type-check": "vue-tsc --build"
+    "type-check": "vue-tsc --build",
+    "publish:package": "npm run build && npm publish --registry=https://npm.pkg.github.com",
+    "link": "npm run build && npm link"
   },
   "dependencies": {
     "vue": "^3.5.13"
@@ -23,5 +34,11 @@
     "vite": "^6.1.0",
     "vite-plugin-vue-devtools": "^7.7.2",
     "vue-tsc": "^2.2.2"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
   }
 }
