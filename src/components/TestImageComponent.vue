@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import testImage from '@/assets/testimage.webp'
+import testImage from '../assets/testimage.webp'
 </script>
 
 <style scoped>
